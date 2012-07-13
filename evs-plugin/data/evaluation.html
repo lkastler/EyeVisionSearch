@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Evaluation</title>
+<link type="text/css" rel="stylesheet" type="text/css" href="jquery/ui-lightness/jquery-ui-1.8.14.custom.css">
+<style type="text/css">
+body {
+	font-family: arial, verdana, sans-serif;
+	font-size: 16px;
+}
+
+h1 {
+	font-size: 20px;
+}
+
+li {
+	margin: 5px;
+}
+
+.ui-slider-handle {
+	visibility: hidden;
+}
+
+div .slider {
+	width:100%;
+	background-image: none;
+	background-color: gray;
+}
+
+.qn-left {
+	display: inline-block;
+	vertical-align: top;
+	width: 300px;
+}
+
+.qn-right {
+	margin-left: 10px;
+	display: inline-block;
+	vertical-align: top;
+}
+
+a.link-next {
+	display: block;
+}
+
+div.section {
+	border: solid 1px;
+	padding: 5px;
+	margin: 5px;
+}
+
+table td {
+	text-align: center;
+	vertical-align: text-top;
+}
+
+#progression {
+	color: white;
+	position: fixed;
+	width: 100px;
+	height: 50px;
+	top: 0px;
+	right: 0px;
+	z-index: 50;
+	text-align: center;
+	vertical-align: middle;
+	background-color: gray;
+}
+
+#progression b {
+	display: block;
+}
+
+#precision ul {
+	list-style: none inside;
+	margin: 0px;
+	padding: 0px;
+}
+
+#precision li {
+	list-style: none inside;
+	border: solid 4px black;
+	display: inline-block;
+	padding: 0 0 5px 5px;
+}
+
+#precision img {
+	display: block;
+}
+
+#precision input {
+	display: block;
+}
+</style>
+<script type="text/javascript">
+var evs_sequences = {
+		"a":[
+			"#introG", "#qn1",
+			"#tutorialG", "#tutorialTaskG", "$", "#wellDone",
+			"#task1", "$", "#qn2", 
+			"#task2", "$", "#qn2",
+			"#task3", "$", "#qn2", 
+			"#task4", "$", "#qn2",
+			"#task5", "$", "#qn2",
+			"#task6", "$", "#qn2",
+			"#qn3", "#feedback", "#end"
+		],
+		"b":[
+			"#introC", "#qn1",
+			"#tutorialG", "#tutorialC2", "#tutorialTaskC", "$", "#wellDone",
+			"#task1", "$", "#precision", "#qn4",
+			"#task2", "$", "#precision", "#qn4",
+			"#task3", "$", "#precision", "#qn4",
+			"#task4", "$", "#precision", "#qn4",
+			"#task5", "$", "#precision", "#qn4",
+			"#task6", "$", "#precision", "#qn4",
+			"#qn5", "#feedback", 
+			"#end"
+		],
+		"c":[
+			"#introC", "#qn1",
+			"#tutorialG", "#tutorialC2", "#tutorialTaskC", "$", "#wellDone",
+			"#task1", "$", "#precision", "#qn4",
+			"#task2", "$", "#precision", "#qn4",
+			"#task3", "$", "#precision", "#qn4",
+			"#task4", "$", "#precision", "#qn4",
+			"#task5", "$", "#precision", "#qn4",
+			"#task6", "$", "#precision", "#qn4",
+			"#qn5", "#feedback", "#end"
+		]
+};
+</script>
+</head>
+<body>
+<div id="progression"></div>
+<!-- -->
+<div class="section" id="introG">
+<h1>Einleitung</h1>
+<p>
+In dieser Evaluation wird die Einsetzbarkeit von Eyetrackern im Kontext der Bildersuche untersucht. Hierzu sollen mehrere Aufgaben mit Hilfe der Google Bildersuche durchgef&uuml;hrt werden. Jede Aufgabe beginnt mir einer Beschreibung der Aufgabenstellung. Nach der Bearbeitung der Aufgabe erscheint ein Fragebogen.
+</p>
+<p>
+W&auml;hrend Du die Aufgabe bearbeitest, werden die folgenden Daten vom System erfasst: 
+<ul>
+<li>Augenbewegungen</li>
+<li>Mausbewegungen</li>
+<li>Anfang und Ende der Bearbeitung der Aufgabe</li>
+<li>Gestellte Anfragen</li>
+<li>Angaben in den Frageb&ouml;gen.</li>
+<li>Ergebnisse der bearbeiteten Aufgabe</li>
+</ul>
+</p>
+<p>
+F&uuml;r die Bearbeitung der Aufgaben steht Dir die Google Bildersuche im vollem Umfang zur Verf&uuml;gung.
+</p>
+<a class="link-next" href="#">Weiter</a>
+</div>
+
+<!-- -->
+<div class="section" id="introC">
+<h1>Einleitung</h1>
+<p>
+In dieser Evaluation wird die Einsetzbarkeit von Eyetrackern im Kontext der Bildersuche untersucht. Hierzu sollen mehrere Aufgaben mit Hilfe der Google Bildersuche durchgef&uuml;hrt werden. Zus&auml;tzlich steht Dir ein Clipboard zur Verf&uuml;gung. In diesem Clipboard werden die Bilder angezeigt, die f&uuml;r die L&ouml;sung der jeweiligen Aufgabe vom System als geeignet erachtet werden.
+</p>
+<p>
+W&auml;hrend Du die Aufgabe bearbeitest werden die folgenden Messwerte vom System erfasst: 
+<ul>
+<li>Augenbewegungen</li>
+<li>Mausbewegungen</li>
+<li>Anfang und Ende der Bearbeitung der Aufgabe</li>
+<li>Gestellte Anfragen</li>
+<li>Angaben in den Frageb&ouml;gen.</li>
+<li>Ergebnisse der bearbeiteten Aufgabe</li>
+</ul>
+</p>
+<p>
+F&uuml;r die Bearbeitung der Aufgaben steht Dir die Google Bildersuche im vollem Umfang zur Verf&uuml;gung, sowie das Clipboard.
+</p>
+<a class="link-next" href="#">Weiter</a>
+</div>
+
+<!-- -->
+<div class="section" id="qn1">
+<h1>Allgemeine Fragen:</h1>
+<ul>
+<li>
+<div class="qn-left">
+Alter: 
+</div>
+<div class="qn-right">
+<input name="age" type="text" size="2">
+</div>
+</li>
+
+<li>
+<div class="qn-left">
+Geschlecht:
+</div>
+<div class="qn-right">
+<select name="gender">
+<option value="0">Bitte w&auml;hlen...</option>
+<option value="w">Weiblich</option>
+<option value="m">M&auml;nnlich</option>
+</select>
+</div>
+</li>
+
+<li>
+<div class="qn-left">
+Beruf / Ausbildung
+</div>
+<div class="qn-right">
+<input name="profession" type="text" size="50">
+</div>
+</li>
+
+<li>
+<div class="qn-left">
+Ich bin mit der Verwendung von Bildersuchmaschinen vertraut.
+</div>
+<div class="qn-right">
+<table width="400px">
+<tr>
+<td colspan="3">
+<div id="imagesearch-experience" class="slider"></div>
+</td>
+</tr>
+<tr>
+<td style="text-align: left;">Garnicht vertraut</td>
+<td>vertraut</td>
+<td style="text-align: right;">Vollkommen vertraut</td>
+<tr>
+</tr>
+</table>
+</div>
+</li>
+
+<li>
+<div class="qn-left">
+Ich verwende h&auml;ufig Bildersuchmaschinen.
+</div>
+<div class="qn-right">
+<select name="imagesearch-freqency">
+<option value="0">Bitte w&auml;hlen...</option>
+<option value="1">Garnicht</option>
+<option value="2">Monatlich</option>
+<option value="3">W&ouml;chentlich</option>
+<option value="4">T&auml;glich</option>
+<option value="5">Mehrmals t&auml;glich</option>
+</select>
+</div>
+</li>
+</ul>
+<a class="link-next" href="#">Weiter</a>
+</div>
+
+<!-- -->
+<div class="section" id="tutorialG">
+<h1>Einf&uuml;hrung</h1>
+<p>
+Die Bearbeitung der Aufgaben wird mit Hilfe der Google Bildersuche durchgef&uuml;hrt. Die Aufgaben bestehen in der Suche und Abspeichern von verschiedenen Bildern zu einem vorgegebenen Thema.
+</p>
+<p>
+Jede Aufgabe beginnt mit einer kurzen Beschreibung der Aufgabenstellung. Danach &ouml;ffnet sich die Google Bildersuche. Hier kannst Du Deinen gew&uuml;nschten Suchbegriff eingeben. Bei Bet&auml;tigung der Schaltf&auml;che "Bilder suchen" &ouml;ffnet sich die folgende Seite:
+<img src="pictures/gis.png" width="800px"  style="margin: 3px; display:block;"></img>
+Im rechten Bereich werden die Bilder dargestellt, die Google als Ergebnisse auf Deine Anfrage anbietet. In der linken Spalte (roter Rahmen) werden zudem mehrere Filter angeboten, um die Ergebnisse beispielsweise nach Farbe oder Gr&ouml;&szlig;e zu filtern.
+</p>
+<p>
+Wenn Du Dich f&uuml;r ein Bild entschieden hast, kannst Du mit Rechtsklick und "Speichern unter..." das Bild speichern.
+</p>
+<p>
+Wenn Du die Aufgabe fertig bearbeitet hast, kannst Du das Fenster mit der Google Bildersuche schlie&szlig;en und mit der Evaluation fortfahren.
+</p>
+<a class="link-next" href="#">Weiter</a>
+</div>
+
+<!-- -->
+<div class="section" id="tutorialC2">
+<h1>Das Clipboard</h1>
+<p>
+Zus&auml;tzlich steht Dir f&uuml;r die Bearbeitung das Clipboard zur Verf&uuml;gung, das mit dem "Universit&auml;t Koblenz" Icon ge&ouml;ffnet werden kann (siehe Abbildung). Du kannst auch Alt und F1 dr&uuml;cken, um das Clipboard zu &ouml;ffnen.
+</p>
+<img src="pictures/evs-icon.png" width="200px"  style="margin: 3px; display:block;"></img>
+<p>
+Im Clipboard wird Dir eine Auswahl an Bildern pr&auml;sentiert.
+Die Reihenfolge der Bilder spiegelt wider, in wieweit das System das jeweilige Bild als zutreffend f&uuml;r die Aufgabe einsch&auml;tzt.
+</p>
+<p>
+Das Clipboard f&uuml;llt sich w&auml;hrend Du die Aufgabe bearbeitest mit Bildern. Somit kann es sein, dass es am Anfang leer ist. 
+</p>
+<p>
+Das nachfolgende Bild ist ein Beispiel:
+</p>
+<img src="pictures/clipboard.png" width="800px"  style="margin: 3px; display:block;"></img>
+<p>
+Unten links befindet sich die "Schlie&szlig;en"-Schaltfl&auml;che, mit der Du das Clipboard schlie&szlig;en kannst.
+</p>
+<p>
+Wenn Du auf ein Bild klickst, &ouml;ffnet sich ein Dialog mit dem Du das jeweilige Bild speichern kannst.
+</p>
+<p>
+Im unteren Bereich hast Du eine Auswahl, wieviele Bilder Dir angezeigt werden sollen.
+</p>
+<a class="link-next" href="#">Weiter</a>
+</div>
+<div class='section' id="tutorialTaskG">
+<h1>Aufgabe zum &quot;Warmwerden&quot;</h1>
+<p>
+Diese Aufgabe dient der Einf&uuml;hrung mit dem Umgang der Google Bildersuche. Die Aufgabe dient ausschlie&szlig;lich zur Einf&uuml;hrung in den Verlauf der Evaluation.
+</p>
+<p>
+Du hast die Aufgabe ein Bild von der <b>Universit&auml;t Koblenz</b> zu finden.
+Klicke nun auf "Weiter", um zur Google Bildersuche zu gelangen. Du beendest die Aufgabe, wenn Du das Fenster mit der Google Bildersuche schlie&szlig;t.
+</p>
+<h2>Abfolge</h2>
+<ul>
+<li>Klicke auf &quot;Weiter&quot;</li>
+<li>Suche ein Bild von der <b>Universit&auml;t Koblenz</b></li>
+<li>Speichere Deine Auswahl in dem Ordner &quot;Beispiel&quot; ab</li>
+<li>Schlie&szlig;e das Google Bildersuche Fenster</li>
+</ul>
+<a class="link-next" href="#">Weiter</a>
+</div>
+
+<!-- -->
+<div class='section' id="tutorialTaskC">
+<h1>Aufgabe zum &quot;Warmwerden&quot;</h1>
+<p>
+Diese Aufgabe dient der Einf&uuml;hrung mit dem Umgang der Google Bildersuche mit Clipboard. Die Aufgabe dient ausschlie&szlig;lich zur Einf&uuml;hrung in den Verlauf der Evaluation.
+</p>
+<p>
+Du hast die Aufgabe ein Bild von der <b>Universit&auml;t Koblenz</b> zu finden.
+Klicke nun auf "Weiter", um zur Google Bildersuche zu gelangen. Du kannst mit der Evaluation fortfahren, wenn Du das Fenster mit der Google Bildersuche schlie&szlig;t.
+</p>
+<p>
+Um die nachfolgenden Fragen bearbeiten zu k&ouml;nnen, musst Du mindestens einmal das Clipboard verwendet haben.
+</p>
+<h2>Abfolge</h2>
+<ul>
+<li>Klicke auf &quot;Weiter&quot;</li>
+<li>Suche ein Bild von der <b>Universit&auml;t Koblenz</b></li>
+<li>Benutze mindestens einmal das Clipboard bevor Du Dich f&uuml;r ein Bild entscheidest</li>
+<li>Speichere Deine Auswahl im Ordner &quot;Beispiel&quot; ab</li>
+<li>Schlie&szlig;e das Google Bildersuche Fenster</li>
+</ul>
+<a class="link-next" href="#">Weiter</a>
+</div>
+
+<!-- -->
+<div class="section" id="wellDone">
+<h1>Sehr gut!</h1>
+<p>
+
+</p>
+<a class="link-next" href="#">Weiter</a>
+</div>
+
+<!-- -->
+<div class="section" id="task1">
+<h1>Aufgabe 1</h1>
+<p>
+Stell Dir vor, Du willst eine Ausarbeitung &uuml;ber <b>Michael Jackson</b> schreiben und ben&ouml;tigst hierf&uuml;r ein Portraitbild. Bei der Auswahl des Bildes ist es wichtig, dass es f&uuml;r Dich ein gutes Portraitbild von Michael Jackson ist. Das Gesicht sollte in einer f&uuml;r Dich <b>sympathischen Form</b> dargestellt sein, also keine Grimassen oder &auml;hnliches.
+</p>
+<p>
+Klicke nun auf "Weiter", um mit der Suche zu beginnen. Wenn du ein Bild gefunden hast, speichere dieses im Ordner &quot;Aufgabe 1&quot;, der auf dem Desktop liegt, ab. schlie&szlig;e danach das Fenster mit der Google Bildersuche, um mit der Evaluation fortzufahren.
+<h2>Abfolge</h2>
+<ul>
+<li>Klicke auf &quot;Weiter&quot;</li>
+<li>Suche ein Portaitbild von <b>Michael Jackson</b></li>
+<li>Speichere Deine Auswahl im Ordner &quot;Aufgabe 1&quot; ab</li>
+<li>Schlie&szlig;e das Google Bildersuche Fenster</li>
+</ul>
+</p>
+<a class="link-next" href="#">Weiter</a>
+</div>
+
+<!-- -->
+<div class="section" id="task2">
+<h1>Aufgabe 2</h1>
+<p>
+Stell Dir vor, Du m&ouml;chtest ein neues, sch&ouml;nes Hintergrundbild f&uuml;r Dein Notebook haben. Das Bild soll das Thema <b>&quot;Romantischer Rhein&quot;</b> haben. Wichtig hierbei ist, dass das Bild auch in einer passenden Gr&ouml;&szlig;e sein muss, also <b>mindestens 1200x900</b> Pixel.
+</p>
+<p>
+Wenn Dir ein Bild gef&auml;llt, speichere es in dem Ordner &quot;Aufgabe 2&quot;, der auf dem Desktop ab und fahre mit der Evaluation fort, indem Du die Google Bildersuche schlie&szlig;t.
+</p>
+<p>
+<h2>Abfolge</h2>
+<ul>
+<li>Klicke auf &quot;Weiter&quot;</li>
+<li>Suche ein gro&szlig;es Bild zum Thema: <b>&quot;Romantischer Rhein&quot;</b></li>
+<li>Speichere Deine Auswahl im Ordner &quot;Aufgabe 2&quot; ab</li>
+<li>Schlie&szlig;e das Google Bildersuche Fenster</li>
+</ul>
+
+</p>
+<a class="link-next" href="#">Weiter</a>
+</div>
+
+<!-- -->
+<div class="section" id="task3">
+<h1>Aufgabe 3</h1>
+<p>
+Angenommen, Du sollst eine Pr&auml;sentation &uuml;ber <b>Berlin</b> halten. Hierf&uuml;r willst Du f&uuml;r die erste Seite eine Auswahl an Bildern von Sehensw&uuml;rdigkeiten der Stadt haben. Deine Aufgabe besteht darin, <b>5 Bilder</b> von Sehensw&uuml;rdigkeiten in Berlin zu finden.
+</p>
+<p>
+Hast Du alle Bilder ausgew&auml;hlt und gespeichert, kannst Du mit der Evaluation fortfahren, indem Du das Fenster mit der Google Bildersuche schlie&szlig;t.</p>
+<h2>Abfolge</h2>
+<ul>
+<li>Klicke auf &quot;Weiter&quot;</li>
+<li>Suche <b>f&uuml;nf</b> Bilder von <b>Berlin</b></li>
+<li>Speichere Deine Auswahl im Ordner &quot;Aufgabe 3&quot; ab</li>
+<li>Schlie&szlig;e das Google Bildersuche Fenster</li>
+</ul>
+
+<a class="link-next" href="#">Weiter</a>
+</div>
+
+<!-- -->
+<div class="section" id="task4">
+<h1>Aufgabe 4</h1>
+<p>
+Da Deine Ausarbeitung &uuml;ber Michael Jackson sehr gut ankam, bekommst Du die Aufgabe, eine weitere Ausarbeitung &uuml;ber einen K&uuml;nstler zu schreiben. Deine Wahl f&auml;llt auf <b>Lady Gaga</b>. F&uuml;r die Ausarbeitung suchst Du wieder ein Portraitbild.
+</p>
+<h2>Abfolge</h2>
+<ul>
+<li>Klicke auf &quot;Weiter&quot;</li>
+<li>Suche ein Portraitbild von <b>Lady Gaga</b></li>
+<li>Speichere Deine Auswahl im Ordner &quot;Aufgabe 4&quot; ab</li>
+<li>Schlie&szlig;e das Google Bildersuche Fenster</li>
+</ul>
+<a class="link-next" href="#'">Weiter</a>
+</div>
+
+<!-- -->
+<div class="section" id="task5">
+<h1>Aufgabe 5</h1>
+<p>
+Stell Dir vor, ein Freund von Dir zieht nach Berlin. Zum Abschied willst Du ihm ein selbstgedrucktes T-Shirt mit dem Ampelm&auml;nnchen schenken. Um ein klareren Druck zu erhalten, suchst Du eine <b>Clipart-Darstellung</b>.
+</p>
+<h2>Abfolge</h2>
+<ul>
+<li>Klicke auf &quot;Weiter&quot;</li>
+<li>Suche  <b>Clipart</b> von <b>Ampelm&auml;nnchen</b></li>
+<li>Speichere Deine Auswahl im Ordner &quot;Aufgabe 5&quot; ab</li>
+<li>Schlie&szlig;e das Google Bildersuche Fenster</li>
+</ul>
+<a class="link-next" href="#'">Weiter</a>
+</div>
+
+<!-- -->
+<div class="section" id="task6">
+<h1>Aufgabe 6</h1>
+<p>
+Zu Weihnachten willst Du eine Gru&szliglkarte mit Deinem Lieblingskomiker <b>Loriot</b> verschicken. Hierzu suchst Du <b>drei</b> verschiedene Motive von Loriot, die zum Thema <b>Weihnachten</b> passen.
+</p>
+<h2>Abfolge</h2>
+<ul>
+<li>Klicke auf &quot;Weiter&quot;</li>
+<li>Suche <b>drei</b> Bilder von <b>Loriot</b> im Zusammenhang mit <b>Weihnachten</b></li>
+<li>Speichere Deine Auswahl im Ordner &quot;Aufgabe 6&quot; ab</li>
+<li>Schlie&szlig;e das Google Bildersuche Fenster</li>
+</ul>
+<a class="link-next" href="#'">Weiter</a>
+</div>
+
+<!-- -->
+<div class="section" id="qn2">
+<h1>Fragebogen</h1>
+<ul>
+<li>
+<div class="qn-left">
+Mit der Google Bildersuche kann ich zusammenh&auml;ngende Arbeitsabl&auml;ufe vollst&auml;ndig bearbeiten.
+</div>
+<div class="qn-right">
+<table width="400px">
+<tr>
+<td colspan="2">
+<div id="qg1" class="slider" ></div>
+</td>
+</tr>
+<tr>
+<td style="text-align: left;">Nicht zustimmen</td>
+<td style="text-align: right;">Vollkommen zustimmen</td>
+</tr>
+</table>
+</div>
+</li>
+
+<li>
+<div class="qn-left">
+Google Bildersuche bietet mir alle M&ouml;glichkeiten, die ich f&uuml;r die Bearbeitung der Aufgabe ben&ouml;tige.
+</div>
+<div class="qn-right">
+<table width="400px">
+<tr>
+<td colspan="2">
+<div id="qg2" class="slider" ></div>
+</td>
+</tr>
+<tr>
+<td style="text-align: left;">Nicht zustimmen</td>
+<td style="text-align: right;">Vollkommen zustimmen</td>
+</tr>
+</table>
+</div>
+</li>
+
+<li>
+<div class="qn-left">
+Die Ergebnisse von der Google Bildersuche entsprachen meinen Vorstellungen bei der Formulierung meiner Anfrage.
+</div>
+<div class="qn-right">
+<table width="400px">
+<tr>
+<td colspan="2">
+<div id="qg3" class="slider" ></div>
+</td>
+</tr>
+<tr>
+<td style="text-align: left;">Nicht zustimmen</td>
+<td style="text-align: right;">Vollkommen zustimmen</td>
+</tr>
+</table>
+</div>
+</li>
+
+<li>
+<div class="qn-left">
+Es m&uuml;ssen zuviele Eingabeschritte f&uuml;r die Bearbeitung der Aufgabe durchgef&uuml;hrt werden.
+</div>
+<div class="qn-right">
+<table width="400px">
+<tr>
+<td colspan="2">
+<div id="qg4" class="slider" ></div>
+</td>
+</tr>
+<tr>
+<td style="text-align: left;">Nicht zustimmen</td>
+<td style="text-align: right;">Vollkommen zustimmen</td>
+</tr>
+</table>
+</div>
+</li>
+
+<li>
+<div class="qn-left">
+Die Darstellung der Ergebnisse war f&uuml;r die Bearbeitung der Aufgabe geeignet.
+</div>
+<div class="qn-right">
+<table width="400px">
+<tr>
+<td colspan="2">
+<div id="qg5" class="slider" ></div>
+</td>
+</tr>
+<tr>
+<td style="text-align: left;">Nicht zustimmen</td>
+<td style="text-align: right;">Vollkommen zustimmen</td>
+</tr>
+</table>
+</div>
+</li>
+</ul>
+<a class="link-next" href="#">Weiter</a>
+</div>
+
+<div class="section" id="qn3">
+<h1>Abschlie&szlig;ender Fragebogen</h1>
+<ul>
+<li>
+<div class="qn-left">
+Die Verwendung der Google Bildersuche war f&uuml;r mich intuitiv.
+</div>
+<div class="qn-right">
+<table width="400px">
+<tr>
+<td colspan="2">
+<div id="qg6" class="slider" ></div>
+</td>
+</tr>
+<tr>
+<td style="text-align: left;">Nicht zustimmen</td>
+<td style="text-align: right;">Vollkommen zustimmen</td>
+</tr>
+</table>
+</div>
+
+</li>
+<li>
+<div class="qn-left">
+Die Anwesenheit des Eyetrackers hat mich bei der Bearbeitung der Aufgaben gest&ouml;rt.
+</div>
+<div class="qn-right">
+<table width="400px">
+<tr>
+<td colspan="2">
+<div id="qg7" class="slider" ></div>
+</td>
+</tr>
+<tr>
+<td style="text-align: left;">Nicht zustimmen</td>
+<td style="text-align: right;">Vollkommen zustimmen</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<div class="qn-left">
+Es war zu jeder Zeit erkennbar, ob die Google Bildersuche noch arbeitet.
+</div>
+<div class="qn-right">
+<table width="400px">
+<tr>
+<td colspan="2">
+<div id="qg8" class="slider" ></div>
+</td>
+</tr>
+<tr>
+<td style="text-align: left;">Nicht zustimmen</td>
+<td style="text-align: right;">Vollkommen zustimmen</td>
+</tr>
+</table>
+</div>
+</li>
+</ul>
+<a class="link-next" href="#">Gleich sind wir fertig...</a>
+</div>
+
+<!-- -->
+<div class="section" id="qn4">
+<h1>Fragebogen</h1>
+<ul>
+<li>
+<div class="qn-left">
+Mit Google&amp;Clipboard kann ich zusammenh&auml;ngende Arbeitsabl&auml;ufe vollst&auml;ndig bearbeiten.
+</div>
+<div class="qn-right">
+<table width="400px">
+<tr>
+<td colspan="2">
+<div id="qc1" class="slider" ></div>
+</td>
+</tr>
+<tr>
+<td style="text-align: left;">Nicht zustimmen</td>
+<td style="text-align: right;">Vollkommen zustimmen</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<div class="qn-left">
+Google&amp;Clipboard bietet mir alle M&ouml;glichkeiten, die ich f&uuml;r die Bearbeitung der Aufgabe ben&ouml;tige.
+</div>
+<div class="qn-right">
+<table width="400px">
+<tr>
+<td colspan="2">
+<div id="qc2" class="slider" ></div>
+</td>
+</tr>
+<tr>
+<td style="text-align: left;">Nicht zustimmen</td>
+<td style="text-align: right;">Vollkommen zustimmen</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<div class="qn-left">
+Die Ergebnisse von Google&amp;Clipboard entsprachen meinen Vorstellungen bei der Formulierung meiner Anfrage.
+</div>
+<div class="qn-right">
+<table width="400px">
+<tr>
+<td colspan="2">
+<div id="qc3" class="slider" ></div>
+</td>
+</tr>
+<tr>
+<td style="text-align: left;">Nicht zustimmen</td>
+<td style="text-align: right;">Vollkommen zustimmen</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<div class="qn-left">
+Es m&uuml;ssen zuviele Eingabeschritte f&uuml;r die Bearbeitung der Aufgabe durchgef&uuml;hrt werden.
+</div>
+<div class="qn-right">
+<table width="400px">
+<tr>
+<td colspan="2">
+<div id="qc4" class="slider" ></div>
+</td>
+</tr>
+<tr>
+<td style="text-align: left;">Nicht zustimmen</td>
+<td style="text-align: right;">Vollkommen zustimmen</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<div class="qn-left">
+Die Darstellung der Ergebnisse war f&uuml;r die Bearbeitung der Aufgabe geeignet.
+</div>
+<div class="qn-right">
+<table width="400px">
+<tr>
+<td colspan="2">
+<div id="qc5" class="slider" ></div>
+</td>
+</tr>
+<tr>
+<td style="text-align: left;">Nicht zustimmen</td>
+<td style="text-align: right;">Vollkommen zustimmen</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<div class="qn-left">
+Das Clipboard hat mich bei der Bearbeitung der Aufgabe unterst&uuml;tzt.
+</div>
+<div class="qn-right">
+<table width="400px">
+<tr>
+<td colspan="2">
+<div id="qc6" class="slider" ></div>
+</td>
+</tr>
+<tr>
+<td style="text-align: left;">Nicht zustimmen</td>
+<td style="text-align: right;">Vollkommen zustimmen</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<div class="qn-left">
+Die Darstellung der Ergebnisse der Google Bildersuche war &uuml;bersichtlich.
+</div>
+<div class="qn-right">
+<table width="400px">
+<tr>
+<td colspan="2">
+<div id="qc7" class="slider" ></div>
+</td>
+</tr>
+<tr>
+<td style="text-align: left;">Nicht zustimmen</td>
+<td style="text-align: right;">Vollkommen zustimmen</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<div class="qn-left">
+Die Darstellung im Clipboard war &uuml;bersichtlich.
+</div>
+<div class="qn-right">
+<table width="400px">
+<tr>
+<td colspan="2">
+<div id="qc8" class="slider" ></div>
+</td>
+</tr>
+<tr>
+<td style="text-align: left;">Nicht zustimmen</td>
+<td style="text-align: right;">Vollkommen zustimmen</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<div class="qn-left">
+Die Bilder im Clipboard waren f&uuml;r die Aufgabenstellung passend ausgew&auml;hlt.
+</div>
+<div class="qn-right">
+<table width="400px">
+<tr>
+<td colspan="2">
+<div id="qc9" class="slider" ></div>
+</td>
+</tr>
+<tr>
+<td style="text-align: left;">Nicht zustimmen</td>
+<td style="text-align: right;">Vollkommen zustimmen</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<div class="qn-left">
+Die Reihenfolge der Bilder im Clipboard war f&uuml;r die Aufgabenstellung passend ausgew&auml;hlt.
+</div>
+<div class="qn-right">
+<table width="400px">
+<tr>
+<td colspan="2">
+<div id="qc10" class="slider" ></div>
+</td>
+</tr>
+<tr>
+<td style="text-align: left;">Nicht zustimmen</td>
+<td style="text-align: right;">Vollkommen zustimmen</td>
+</tr>
+</table>
+</div>
+</li>
+</ul>
+<a class="link-next" href="#">Weiter</a>
+</div>
+
+<!-- -->
+<div class="section" id="qn5">
+<h1>Abschlie&szlig;ender Fragebogen</h1>
+<ul>
+<li>
+<div class="qn-left">
+Die Verwendung der Google&amp;Clipboard war f&uuml;r mich intuitiv.
+</div>
+<div class="qn-right">
+<table width="400px">
+<tr>
+<td colspan="2">
+<div id="qc10" class="slider" ></div>
+</td>
+</tr>
+<tr>
+<td style="text-align: left;">Nicht zustimmen</td>
+<td style="text-align: right;">Vollkommen zustimmen</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<div class="qn-left">
+Die Anwesenheit des Eyetrackers hat mich bei der Bearbeitung der Aufgaben gest&ouml;rt.
+</div>
+<div class="qn-right">
+<table width="400px">
+<tr>
+<td colspan="2">
+<div id="qc11" class="slider" ></div>
+</td>
+</tr>
+<tr>
+<td style="text-align: left;">Nicht zustimmen</td>
+<td style="text-align: right;">Vollkommen zustimmen</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<div class="qn-left">
+Es war zu jeder Zeit erkennbar, ob die Google&amp;Clipboard noch arbeitet.
+</div>
+<div class="qn-right">
+<table width="400px">
+<tr>
+<td colspan="2">
+<div id="qc12" class="slider" ></div>
+</td>
+</tr>
+<td style="text-align: left;">Nicht zustimmen</td>
+<td style="text-align: right;">Vollkommen zustimmen</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<div class="qn-left">
+Der Wechsel zwischen der Google Bildersuche und dem Clipboard war auf einfache Weise m&ouml;glich.
+</div>
+<div class="qn-right">
+<table width="400px">
+<tr>
+<td colspan="2">
+<div id="qc13" class="slider" ></div>
+</td>
+</tr>
+<td style="text-align: left;">Nicht zustimmen</td>
+<td style="text-align: right;">Vollkommen zustimmen</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<div class="qn-left">
+Das Clipboard ist eine sinnvolle Erweiterung zur Google Bildersuche.
+</div>
+<div class="qn-right">
+<table width="400px">
+<tr>
+<td colspan="2">
+<div id="qc14" class="slider" ></div>
+</td>
+</tr>
+<td style="text-align: left;">Nicht zustimmen</td>
+<td style="text-align: right;">Vollkommen zustimmen</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<div class="qn-left">
+Der Umgang mit dem Clipboard war f&uuml;r mich leicht zu erlernen.
+</div>
+<div class="qn-right">
+<table width="400px">
+<tr>
+<td colspan="2">
+<div id="qc15" class="slider" ></div>
+</td>
+</tr>
+<tr>
+<td style="text-align: left;">Nicht zustimmen</td>
+<td style="text-align: right;">Vollkommen zustimmen</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<div class="qn-left">
+Bei der Arbeit mit dem Clipboard traten Systemfehler auf.
+</div>
+<div class="qn-right">
+<table width="400px">
+<tr>
+<td colspan="2">
+<div id="qc16" class="slider" ></div>
+</td>
+</tr>
+<tr>
+<td style="text-align: left;">Nicht zustimmen</td>
+<td style="text-align: right;">Vollkommen zustimmen</td>
+</tr>
+</table>
+</div>
+</li>
+</ul>
+<a class="link-next" href="#">Gleich sind wir fertig...</a>
+</div>
+
+<!-- -->
+<div class="section" id="feedback">
+<h1>Freies Feedback</h1>
+<p>
+Hier kannst Du weitere Anmerkungen hinterlassen, danach ist die Evaluation abgeschlossen.
+</p>
+<textarea name="feedback" cols="50" rows="10"></textarea>
+
+<a class="link-next" href="#">Evaluation abschliessen</a>
+</div>
+
+<!-- -->
+<div class="section" id="end">
+Vielen Dank, dass Du an dieser Evaluation teilgenommen hast!
+</div>
+
+<!-- -->
+<div class="section" id="precision">
+<b>Bitte kreuzen Sie alle Bilder an, die Sie als relevant f&uuml;r die Aufgabenstellung erachten:</b>
+<ul></ul>
+<a class="link-next" href="#">Weiter</a>
+</div>
+</body>
+</html>

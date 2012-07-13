@@ -1,0 +1,10 @@
+﻿{
+	"source": "evaluation.html",
+	"vars": {
+		"$": "http://images.google.de"
+	},
+	"eyetrack": {
+		"jar": "http://localhost/lkastler/text20.jar",
+		"classpath": "http://localhost/lkastler/"
+	}
+}

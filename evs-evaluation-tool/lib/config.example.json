@@ -1,0 +1,11 @@
+// remove the comment lines before execution
+{
+	// input file or directory
+    "input": "inputs/",
+	// array of strategies. string should be the file name without .class
+    "strategies": [
+        "DurationStrategy"
+    ],
+	// output file
+    "output": "output.ods"
+}

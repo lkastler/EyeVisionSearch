@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+#panel-top {
+	position: fixed;
+	top: 0px;
+	width: 100%;
+	height: 30px;
+	background-color: gray;
+	vertical-align: middle;
+}
+
+#panel-list {
+	overflow: auto;
+}
+
+#panel-menu {
+	position: fixed;
+	bottom:0px;
+	width: 100%;
+	height: 30px;
+	background-color: gray;
+	vert-align: top;
+}
+
+#left {
+	display: inline-block;
+	position: relative; 
+	left:0px; 
+}
+
+#exit {
+	display: block;
+	position: fixed; 
+	bottom:0px;
+	right:0px;
+}
+
+#panel-list ul {
+	margin: 0px;
+	padding: 0px;
+}
+
+#panel-list li {
+	list-style: none inside;
+	display: inline;
+	padding: 0 0 5px 5px;
+}
+
+#panel-list img {
+	max-width: 180px;
+}
+
+
+
+#panel-right {
+	position: relative;
+	right: 0px;
+}
+
+#panel-top {
+	background-color: gray;
+	position:relative;
+	top: 0px;
+	width: 100%;
+	vertical-align: middle;
+	text-align: right;	
+}
+
+#img-prev {
+	width: 50px;
+}
+</style>
+</head>
+<body>
+<div id="panel-top">
+<div id="left">Klicke auf ein Bild, um es zu speichern</div>
+</div>
+<div id="panel-list">
+<ul></ul>
+</div>
+<div id="panel-menu">
+Clipboard TOP X Bilder anzeigen:
+<span><input type="radio" name="top-list" value="10" checked>10</span>
+<span><input type="radio" name="top-list" value="20">20</span>
+<span><input type="radio" name="top-list" value="50">50</span>
+<input id="exit" type="button" name="exit" value="Clipboard Schlie&szlig;en">
+</div>
+</body>
+</html>
