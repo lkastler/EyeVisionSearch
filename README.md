@@ -2,6 +2,7 @@ EyeVisionSearch
 ===============
 TODO: write propper description
 
+This project is published under the AGPL v3.
 
 Components
 ==========
