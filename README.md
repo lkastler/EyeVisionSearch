@@ -1,6 +1,6 @@
 EyeVisionSearch
 ===============
-TODO: write propper description
+TODO: write proper description
 
 This project is published under the AGPL v3.
 
